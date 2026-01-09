@@ -1,14 +1,20 @@
-from svg_turtle import SvgTurtle
+import matplotlib.pyplot as plt
 import numpy as np
 
-t = SvgTurtle(700,700)
-n = 3
-d = 19
-for angle in range(361):
-      t.color("red")
-      angle_rad = angle+1 * d * np.pi/180
-      r = 300 * np.sin(n * angle_rad)
-      x = r * np.sin(angle+1 * angle_rad)
-      y = r * np.cos(angle+1 * angle_rad)
-      t.goto(x,y)
-t.save_as("rose.svg")
+n = 11 #number of petals of the rose
+d = 97 #in degrees
+xs = []
+ys = []
+
+for i in range(0,360,1):
+      theta = i * (d*np.pi/180)
+      r = np.sin(n*theta)
+
+      xs.append(r * np.sin(theta))
+      ys.append(r * np.cos(theta))
+
+fig, ax = plt.subplots(figsize=(5,5))
+ax.plot(xs,ys, "b")
+ax.axis('off')
+ax.set_title(f"n = {n} | d = {d}")
+fig.savefig("rose.svg", transparent=True)
