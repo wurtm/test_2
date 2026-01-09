@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-n = 11 #number of petals of the rose
-d = 97 #in degrees
+n = 3 #number of petals of the rose
+d = 90 #in degrees
 xs = []
 ys = []
 

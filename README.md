@@ -1,0 +1,1 @@
+This repository contains python code for generation of rose curves and Maurer roses. It also contains Typst file describing process of creating it. Lastly it contains a few showcases in .svg format.
